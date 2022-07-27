@@ -1,6 +1,11 @@
-image: node:18.6.0-alpine3.15
+image: orai/cosmwasm-gitpod:0.11.7
 workspaceLocation: './'
 
 tasks:
-  - init: test command
-    command: echo "start script"
+  - name: init-cargo-file
+    init: touch Cargo.toml
+
+vscode:
+  extensions:
+    - matklad.rust-analyzer
+    - oraichain.cosmwasm-ide
